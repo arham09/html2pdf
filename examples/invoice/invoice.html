@@ -1,0 +1,21 @@
+<!doctype html><html><head><style>
+@page {size:A4;margin:36pt}
+body {font-size:10pt;line-height:14pt;color:#202020}
+p,h1 {margin:0} h1 {font-size:20pt;line-height:26pt}
+.masthead {display:flex;gap:18pt;align-items:flex-start;margin-bottom:14pt}
+.issuer {flex:2 1 0;min-width:0} .customer {flex:1 1 0;min-width:0;text-align:right}
+.summary {display:flex;gap:8pt;margin-bottom:14pt}
+.card {flex:1 1 0;min-width:0;padding:6pt;border:1pt solid #808080;background:#eeeeee}
+table {width:100%;table-layout:fixed;border-collapse:collapse}
+td,th {padding:2pt;border:0.5pt solid #808080}
+.amount {width:110pt;text-align:right}
+.totals {display:flex;justify-content:flex-end;margin-top:12pt}
+.total {flex:0 0 190pt;padding:8pt;border:1pt solid #000080;background:#eeeeee;text-align:right}
+</style></head><body>
+<section class="masthead"><div class="issuer"><h1>INVOICE</h1><p>{{.Issuer}}</p><p>{{.City}}</p></div><div class="customer"><strong>Bill to</strong><p>{{.Customer}}</p><p>{{.Number}}</p></div></section>
+<section class="summary"><div class="card">ISSUED<br>{{.Issued}}</div><div class="card">CURRENCY<br>IDR</div><div class="card">ITEMS<br>{{len .Items}}</div></section>
+<table><thead><tr><th style="width:100pt">Reference</th><th>Description</th><th class="amount">Amount IDR</th></tr></thead><tbody>
+{{range .Items}}<tr><td>{{.Reference}}</td><td>{{.Description}}</td><td class="amount">{{.Amount}}</td></tr>
+{{end}}</tbody></table>
+<section class="totals"><div class="total"><strong>GRAND TOTAL</strong><p>{{.Total}}</p></div></section>
+</body></html>

@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>html2pdf · Go example</title><link rel="stylesheet" href="/style.css"><script src="/app.js" defer></script></head>
+<body><main><header><p class="eyebrow">HTML2PDF / LOCAL EXAMPLE</p><h1>HTML in. PDF out.</h1><p>Render a static document with embedded fonts. Scripts and external asset access are disabled.</p><p id="runtime">Checking runtime…</p></header><section class="workspace"><form id="editor"><label for="html">Document HTML</label><textarea id="html" spellcheck="false"><!doctype html>
+<html><head><style>
+@page { size: A4; margin: 15mm }
+body { font-family: "Noto Sans"; font-size: 10pt; color: #25364a }
+table { width: 100%; table-layout: fixed; border-collapse: collapse }
+th, td { border: 0.75pt solid #aabbcc; padding: 6pt }
+thead { background: #e9f0f6 }
+.number { text-align: right }
+</style></head><body>
+<h1>INVOICE DEMO-0001</h1>
+<p>PT Contoh Indonesia · Jakarta</p>
+<table><thead><tr><th>Description</th><th class="number">Amount (IDR)</th></tr></thead><tbody>
+<tr><td>Preparation and review</td><td class="number">2.000.000,00</td></tr>
+<tr><td>Design checks: café and é</td><td class="number">500.000,00</td></tr>
+<tr><td><strong>Grand total</strong></td><td class="number"><strong>2.500.000,00</strong></td></tr>
+</tbody></table>
+</body></html></textarea><div class="actions"><button id="render" type="submit">Render PDF</button><a id="download" download="document.pdf" hidden>Download PDF</a></div><p id="status" role="status" aria-live="polite">Ready. Up to 256 KiB HTML; one render at a time.</p></form><div class="preview"><p id="placeholder">Your PDF preview appears here.</p><iframe id="pdf" title="Generated PDF preview" hidden></iframe></div></section></main></body></html>

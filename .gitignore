@@ -1,0 +1,7 @@
+# Example output
+/*.pdf
+.DS_Store
+
+# Local tooling
+.agent/
+.code-review-graph/

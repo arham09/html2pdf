@@ -1,0 +1,16 @@
+<!doctype html><html><head><style>
+@page{size:A4;margin:36pt}
+body{font-size:10pt;line-height:14pt;color:#202020}p,h1{margin:0}
+h1{font-size:20pt;line-height:26pt;margin-bottom:8pt}
+.summary{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10pt;margin-top:14pt;margin-bottom:14pt}
+.card{padding:8pt;border:1pt solid #000080;background:#eeeeee}
+.value{font-size:18pt;line-height:24pt}
+table{width:100%;table-layout:fixed;border-collapse:collapse}
+th,td{border:0.5pt solid #808080;padding:2pt}
+</style></head><body>
+<h1>FINANCIAL SUMMARY</h1><p>{{.Company}} · {{.Period}}</p><p>Revenue by branch</p>
+<section class="summary">
+{{range .Branches}}<div class="card"><strong>{{.Name}}</strong><p>Revenue</p><p class="value">{{.Revenue}}</p></div>
+{{end}}</section>
+<table><thead><tr><th>Item</th><th>Value</th></tr></thead><tbody><tr><td>Branches</td><td>{{len .Branches}}</td></tr><tr><td>Currency</td><td>IDR</td></tr></tbody></table>
+</body></html>
